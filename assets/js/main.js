@@ -4,34 +4,34 @@
 // MILESTONE 0: Creare l’array di oggetti con le informazioni fornite.
 const membriTeam = [
       {
-            Name: 'Wayne Barnett',
-            Role: 'Founder & CEO',
-            Image: 'wayne-barnett-founder-ceo.jpg'
+            name: 'Wayne Barnett',
+            role: 'Founder & CEO',
+            image: 'wayne-barnett-founder-ceo.jpg'
       },
       {
-            Name: 'Angela Caroll',
-            Role: 'Chief Editor',
-            Image: 'angela-caroll-chief-editor.jpg'
+            name: 'Angela Caroll',
+            role: 'Chief Editor',
+            image: 'angela-caroll-chief-editor.jpg'
       },
       {
-            Name: 'Walter gordon',
-            Role: 'Office Manager',
-            Image: 'walter-gordon-office-manager.jpg'
+            name: 'Walter gordon',
+            role: 'Office Manager',
+            image: 'walter-gordon-office-manager.jpg'
       },
       {
-            Name: 'Angela Lopez',
-            Role: 'Social Media Manager',
-            Image: 'angela-lopez-social-media-manager.jpg'
+            name: 'Angela Lopez',
+            role: 'Social Media Manager',
+            image: 'angela-lopez-social-media-manager.jpg'
       },
       {
-            Name: 'Scott Estrada',
-            Role: 'Developer',
-            Image: 'scott-estrada-developer.jpg'
+            name: 'Scott Estrada',
+            role: 'Developer',
+            image: 'scott-estrada-developer.jpg'
       },
       {
-            Name: 'Barbara Ramos',
-            Role: 'Grafic Designer',
-            Image: 'barbara-ramos-graphic-designer.jpg'
+            name: 'Barbara Ramos',
+            role: 'Grafic Designer',
+            image: 'barbara-ramos-graphic-designer.jpg'
       }
       
 ]
@@ -79,10 +79,10 @@ function generateMarkup(singleTeam, element) {
 
 function generateCardMember(card, singleTeam){
       card.innerHTML = `
-      <img src="./assets/img/${singleTeam.Image}" alt="">
+      <img src="./assets/img/${singleTeam.image}" alt="">
       <h3 class="pt-3 text-uppercase">Nome</h3>
-      <h4>${singleTeam.Name}</h4>
+      <h4>${singleTeam.name}</h4>
       <h3 class="pt-3 text-uppercase">Ruolo</h3>
-      <h5 class="pb-4">${singleTeam.Role}</h5>
+      <h5 class="pb-4">${singleTeam.role}</h5>
       `
 }
