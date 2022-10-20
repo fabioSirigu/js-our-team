@@ -33,7 +33,7 @@ const membriTeam = [
             Role: 'Grafic Designer',
             Image: 'barbara-ramos-graphic-designer.jpg'
       }
-
+      
 ]
 console.log(membriTeam);
 // MILESTONE 1: Stampare su console le informazioni di nome, ruolo e la stringa della foto
@@ -63,18 +63,26 @@ const rowElement = document.querySelector('.row');
 
 for (let i = 0; i < membriTeam.length; i++) {
       const membroTeam = membriTeam[i];
+      generateMarkup(membroTeam, rowElement);
+}
+
+
+function generateMarkup(singleTeam, element) {
       const colElement = document.createElement('div');
       colElement.classList.add('col');
       const cardMember = document.createElement('div');
       cardMember.classList.add('card_member');
-      colElement.append(cardMember)
-      cardMember.innerHTML = `
-      <img src="./assets/img/${membroTeam.Image}" alt="">
+      colElement.append(cardMember);
+      generateCardMember(cardMember, singleTeam);
+      element.insertAdjacentElement('beforeend', colElement);     
+}
+
+function generateCardMember(card, singleTeam){
+      card.innerHTML = `
+      <img src="./assets/img/${singleTeam.Image}" alt="">
       <h3 class="pt-3 text-uppercase">Nome</h3>
-      <h4>${membroTeam.Name}</h4>
+      <h4>${singleTeam.Name}</h4>
       <h3 class="pt-3 text-uppercase">Ruolo</h3>
-      <h5 class="pb-4">${membroTeam.Role}</h5>
+      <h5 class="pb-4">${singleTeam.Role}</h5>
       `
-      rowElement.insertAdjacentElement('beforeend', colElement);
-  
-  }
+}
