@@ -63,22 +63,25 @@ const rowElement = document.querySelector('.row');
 
 for (let i = 0; i < membriTeam.length; i++) {
       const membroTeam = membriTeam[i];
-      generateMarkup(membroTeam, rowElement);
+      generateCard(membroTeam, rowElement);
 }
 
 
-function generateMarkup(singleTeam, element) {
+function generateCard(singleTeam, element) {
       const colElement = document.createElement('div');
       colElement.classList.add('col');
       const cardMember = document.createElement('div');
       cardMember.classList.add('card_member');
       colElement.append(cardMember);
-      generateCardMember(cardMember, singleTeam);
+
+      cardMember.innerHTML = generateMarkup(singleTeam);
+
+      
       element.insertAdjacentElement('beforeend', colElement);     
 }
 
-function generateCardMember(card, singleTeam){
-      card.innerHTML = `
+function generateMarkup(singleTeam){
+      return `
       <img src="./assets/img/${singleTeam.image}" alt="">
       <h3 class="pt-3 text-uppercase">Nome</h3>
       <h4>${singleTeam.name}</h4>
